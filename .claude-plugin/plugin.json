@@ -1,0 +1,61 @@
+{
+  "name": "linear-forge",
+  "version": "0.1.0",
+  "description": "Linear-driven development workflow — issue to merge in one command",
+  "author": {
+    "name": "Brandon Orther"
+  },
+  "repository": "https://github.com/orther/linear-forge",
+  "license": "MIT",
+  "keywords": ["linear", "workflow", "development", "pr", "issue-tracking"],
+
+  "mcpServers": {
+    "linear": {
+      "type": "http",
+      "url": "https://mcp.linear.app/mcp"
+    }
+  },
+
+  "userConfig": {
+    "linear_team": {
+      "description": "Linear team name (e.g., 'Research-relay', 'Engineering')",
+      "required": true
+    },
+    "linear_team_key": {
+      "description": "Linear team key prefix for issue identifiers (e.g., 'RES', 'ENG')",
+      "required": true
+    },
+    "default_project": {
+      "description": "Default Linear project name to scope work to (optional)",
+      "required": false
+    },
+    "branch_prefix": {
+      "description": "Git branch prefix (default: team key lowercase, e.g., 'res')",
+      "required": false
+    },
+    "base_branch": {
+      "description": "Base branch for PRs (default: 'main')",
+      "required": false
+    },
+    "test_command": {
+      "description": "Command to run tests (e.g., 'npm test', 'go test ./...', 'cargo test')",
+      "required": false
+    },
+    "lint_command": {
+      "description": "Command to run linter (e.g., 'npm run lint', 'golangci-lint run')",
+      "required": false
+    },
+    "merge_strategy": {
+      "description": "PR merge strategy: 'squash', 'merge', or 'rebase' (default: 'squash')",
+      "required": false
+    },
+    "max_parallel_agents": {
+      "description": "Max concurrent subagents for parallel work (default: 5)",
+      "required": false
+    },
+    "cleanup_commands": {
+      "description": "Commands to run after subagent work (e.g., 'find src -name CLAUDE.md -delete')",
+      "required": false
+    }
+  }
+}
