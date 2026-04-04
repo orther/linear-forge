@@ -9,13 +9,6 @@
   "license": "MIT",
   "keywords": ["linear", "workflow", "development", "pr", "issue-tracking"],
 
-  "mcpServers": {
-    "linear": {
-      "type": "http",
-      "url": "https://mcp.linear.app/mcp"
-    }
-  },
-
   "userConfig": {
     "linear_team": {
       "description": "Linear team name (e.g., 'Research-relay', 'Engineering')",
