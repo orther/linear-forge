@@ -1,0 +1,17 @@
+{
+  "name": "linear-forge",
+  "owner": {
+    "name": "Brandon Orther"
+  },
+  "metadata": {
+    "description": "Linear-driven development workflow — issue to merge in one command",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "linear-forge",
+      "description": "Linear-driven development workflow with full issue-to-merge lifecycle, parallel work, and project automation.",
+      "source": "./"
+    }
+  ]
+}
