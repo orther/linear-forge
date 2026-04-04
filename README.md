@@ -4,7 +4,7 @@ Linear-driven development workflow -- issue to merge in one command.
 
 A [Claude Code](https://claude.ai/claude-code) plugin that provides a complete Linear-driven development workflow. Pick an issue, and linear-forge handles the full lifecycle: fetch context, create branch, implement, PR, review, test, merge, and update Linear.
 
-linear-forge bundles the [Linear MCP server](https://mcp.linear.app/mcp) so Claude Code can read and update your issues, projects, and team data without any extra MCP configuration.
+linear-forge requires a [Linear MCP server](https://mcp.linear.app/mcp) to be configured in your project or globally. The plugin does not bundle its own MCP server, so it works with any Linear MCP setup (OAuth, API key, devenv, etc.).
 
 ## Table of Contents
 
@@ -32,7 +32,7 @@ linear-forge bundles the [Linear MCP server](https://mcp.linear.app/mcp) so Clau
 /plugin install linear-forge@orther/linear-forge
 ```
 
-This installs the plugin and registers the bundled Linear MCP server. On first use, Linear will prompt you to authorize via OAuth in your browser.
+This installs the plugin. You must have a Linear MCP server configured separately (e.g., via `devenv.nix`, `.claude/settings.json`, or global MCP config). On first use, Linear will prompt you to authorize via OAuth in your browser.
 
 ## Quick Start
 
@@ -360,13 +360,9 @@ mkdir -p ~/.claude/skills/lw
 
 ## Troubleshooting
 
-### Linear MCP server conflicts
+### Linear MCP server not found
 
-If your project already has the Linear MCP server configured (e.g., in `.claude/settings.json` or `devenv.nix`), you may see duplicate tool registrations. The plugin's bundled Linear MCP server and your project's server are the same endpoint (`https://mcp.linear.app/mcp`), so they should not conflict. If you experience issues:
-
-1. Check for duplicate `linear` entries in your MCP server configuration.
-2. Remove the project-level Linear MCP server declaration -- the plugin provides it.
-3. Restart Claude Code to re-register MCP servers.
+The plugin requires a Linear MCP server to be available. Configure one in your project (e.g., `devenv.nix`, `.claude/settings.json`) or globally. The server should point to `https://mcp.linear.app/mcp`.
 
 ### OAuth authorization
 
@@ -404,7 +400,7 @@ Contributions are welcome. The plugin is structured as:
 
 ```
 .claude-plugin/
-  plugin.json          # Plugin manifest with MCP servers and userConfig schema
+  plugin.json          # Plugin manifest with userConfig schema
 skills/
   work/SKILL.md        # /linear-forge:work
   status/SKILL.md      # /linear-forge:status
