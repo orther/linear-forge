@@ -11,43 +11,63 @@
 
   "userConfig": {
     "linear_team": {
+      "title": "Linear Team",
       "description": "Linear team name (e.g., 'Research-relay', 'Engineering')",
+      "type": "string",
       "required": true
     },
     "linear_team_key": {
-      "description": "Linear team key prefix for issue identifiers (e.g., 'RES', 'ENG')",
+      "title": "Linear Team Key",
+      "description": "Team key prefix for issue identifiers (e.g., 'RES', 'ENG')",
+      "type": "string",
       "required": true
     },
     "default_project": {
-      "description": "Default Linear project name to scope work to (optional)",
+      "title": "Default Project",
+      "description": "Default Linear project name to scope work to",
+      "type": "string",
       "required": false
     },
     "branch_prefix": {
+      "title": "Branch Prefix",
       "description": "Git branch prefix (default: team key lowercase, e.g., 'res')",
+      "type": "string",
       "required": false
     },
     "base_branch": {
+      "title": "Base Branch",
       "description": "Base branch for PRs (default: 'main')",
+      "type": "string",
       "required": false
     },
     "test_command": {
-      "description": "Command to run tests (e.g., 'npm test', 'go test ./...', 'cargo test')",
+      "title": "Test Command",
+      "description": "Command to run tests (e.g., 'npm test', 'go test ./...')",
+      "type": "string",
       "required": false
     },
     "lint_command": {
-      "description": "Command to run linter (e.g., 'npm run lint', 'golangci-lint run')",
+      "title": "Lint Command",
+      "description": "Command to run linter (e.g., 'npm run lint')",
+      "type": "string",
       "required": false
     },
     "merge_strategy": {
-      "description": "PR merge strategy: 'squash', 'merge', or 'rebase' (default: 'squash')",
+      "title": "Merge Strategy",
+      "description": "PR merge method: 'squash', 'merge', or 'rebase' (default: 'squash')",
+      "type": "string",
       "required": false
     },
     "max_parallel_agents": {
-      "description": "Max concurrent subagents for parallel work (default: 5)",
+      "title": "Max Parallel Agents",
+      "description": "Maximum concurrent subagents for parallel work (default: 5)",
+      "type": "string",
       "required": false
     },
     "cleanup_commands": {
+      "title": "Cleanup Commands",
       "description": "Commands to run after subagent work (e.g., 'find src -name CLAUDE.md -delete')",
+      "type": "string",
       "required": false
     }
   }
